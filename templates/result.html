@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<title>Blurred photo</title>
+	<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+
+<body>
+
+
+	<div class=" h-60 w-full flex items-center justify-center bg-teal-lightest font-sans">
+
+		<div class="bg-white shadow-md rounded px-8 pt-2 pb-2 mb-2">
+			<div class="block text-gray-800 font-bold md:flex md:items-center mb-6">
+
+				{% if no_faces==0 %}
+				<h1>No Face found</h1>
+				{% elif no_faces>=1 %}
+				<h1>Processed Photo</h1>
+				{% endif %}
+			</div>
+			<img src=" {{ photo }}" alt="Photo">
+		</div>
+
+		
+	</div>
+
+</body>
+
+</html>
