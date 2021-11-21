@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 import json
 
 filename2 = ''
-UPLOAD_FOLDER = 'uploads'
+UPLOAD_FOLDER = 'static/uploads'
 ALLOWED_EXTENSIONS = set(['png', 'png', 'jpg', 'jpeg', 'webp'])
 
 app = Flask(__name__)
@@ -34,7 +34,7 @@ def result():
     messages = request.args['messages']  # counterpart for url_for()
     messages=json.loads(messages)
     print("###############" + str(messages), file=sys.stdout)
-    # print(messages[0], file=sys.stdout)
+    print(messages['name'], file=sys.stdout)
     # print(messages[1], file=sys.stdout)
 
     return render_template('result.html', no_faces = messages['no_faces'], photo = messages['name'])
@@ -78,7 +78,7 @@ def check():
 
                 image[y:y+roi.shape[0], x:x+roi.shape[1]] = roi
             
-            full_filename = os.path.join('results', filename2)
+            full_filename = os.path.join('static/results', filename2)
             print(full_filename, file=sys.stdout)
 
             image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)

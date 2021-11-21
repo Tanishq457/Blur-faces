@@ -18,14 +18,17 @@
 
 				{% if no_faces==0 %}
 				<h1>No Face found</h1>
-				{% elif no_faces>=1 %}
+				{% else %}
 				<h1>Processed Photo</h1>
 				{% endif %}
 			</div>
+			{% if no_faces>=1 %}
 			<img src=" {{ photo }}" alt="Photo">
+			{% endif %}
+
 		</div>
 
-		
+
 	</div>
 
 </body>
